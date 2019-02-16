@@ -9,7 +9,7 @@ export function reducer(
   action: { type: string, payload: any }
 ) {
   switch (action.type) {
-    case "ADD_TODO": {
+    case "ADD_TODOS": {
       const todo = action.payload;
       const data = [...state.data, todo];
       return {
