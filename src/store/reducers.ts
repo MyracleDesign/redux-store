@@ -1,3 +1,5 @@
+import {ADD_TODO} from "./actions";
+
 export const initialState = {
   loaded: false,
   loading: false,
@@ -9,7 +11,7 @@ export function reducer(
   action: { type: string, payload: any }
 ) {
   switch (action.type) {
-    case "ADD_TODOS": {
+    case ADD_TODO: {
       const todo = action.payload;
       const data = [...state.data, todo];
       return {

@@ -1,5 +1,6 @@
 import * as fromStore from './store';
 import {renderTodos} from "./utils";
+import {addTodo} from "./store/actions";
 
 const input = document.querySelector('input') as HTMLInputElement;
 const button = document.querySelector('button') as HTMLButtonElement;
@@ -16,12 +17,9 @@ button.addEventListener(
   () => {
     if (!input.value.trim()) return;
 
-    const payload = {label: input.value, complete: false};
+    const todo = {label: input.value, complete: false};
 
-    store.dispatch({
-      type: "ADD_TODOS",
-      payload
-    });
+    store.dispatch(new addTodo(todo));
 
     input.value = '';
   },

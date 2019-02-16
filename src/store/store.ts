@@ -17,7 +17,7 @@ export class Store {
     this.subscribers = [...this.subscribers, fn];
     this.notify();
     return () => {
-      this.subscribers.filter(sub => sub !== fn);
+      this.subscribers = this.subscribers.filter(sub => sub !== fn);
     }
   }
 
